@@ -18,22 +18,19 @@ btnOne.addEventListener("click", () => {
             textOne.innerHTML += `${+x}                      `;
         }
       
-      let y=i.toString().split("")
-     
-      if(y==i){
-        textTwo.innerHTML += `${+y}`
-      }
     }
   });
   //? *******************
  
 
   btnTwo.addEventListener("click",()=>{
+    textTwo.innerHTML ="" ;
 
+  
     const perfectNumber =(num)=>{
         let count=0;
-        let arr1 =[]
-        console.log(arr1);
+        
+        
         for(let i=1 ;i<num ;i++){
             if(num%i==0){
                 count += i
@@ -41,19 +38,20 @@ btnOne.addEventListener("click", () => {
         }
     
     
-        if( count == num){
-         arr1.push(num)
-        }
-        return arr1
+        return count == num
           }
           
 //? =====================
-    let a = +inputOne.value;
-    let b = +inputTwo.value;
 
-    for(let i=a ; i<=b ;i++){
+let a = +inputOne.value;
+let b = +inputTwo.value;
 
-        textTwo.innerHTML+=`${perfectNumber(i)}` 
+for(let i=a ; i<=b ;i++){
+if(perfectNumber(i)){
+textTwo.innerHTML +=`${+i},` 
+}
+        
     }
+
   })
 
